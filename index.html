@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Custom Element Test Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="elements.js"></script>
+</head>
+<body>
+  <ud-button label="Initial Value"></ud-root>
+  <script type="text/javascript">
+	const button = document.querySelector('ud-button');
+    button.addEventListener('action', (event) => {
+      console.log(`"action" emitted: ${event.detail}`);
+    })
+    setTimeout(() => button.label = 'Second Value', 3000);
+  </script>
+</body>
+</html>
